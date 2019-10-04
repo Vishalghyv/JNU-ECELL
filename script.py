@@ -14,4 +14,4 @@ def sponser():
 	return render_template("sponser.html")
 
 if __name__=="__main__":
-	app.run(debug=False)
+	app.run()
