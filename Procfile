@@ -1,1 +1,1 @@
-web: gunicorn app:flask_ecell
+web: python script.py
