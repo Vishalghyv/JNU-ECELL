@@ -13,5 +13,5 @@ def home():
 def sponser():
 	return render_template("sponser.html")
 
-if __name__=="__main__":
-	app.run(port=80)
+if __name__ == "__main__":
+	app.run()
