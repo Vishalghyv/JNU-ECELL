@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-cell</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style.css')}}">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.header{
+			background-image: url("{{url_for('static',filename='resources/img-header2.jpg')}}");
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="navbar">
+			<div class="navbar-logo">
+				<img src="{{url_for('static',filename='resources/ecell.jpg')}}" height="50px" width="200px">
+			</div>
+			<div class="navbar-labels">
+				<div class="label-home">
+					<a href="{{url_for('home')}}">Home</a>
+				</div>
+				<a href="{{url_for('home')}}#intro-ref">
+				<div class="label-about">
+					About Us
+				</div>
+				</a>
+				<div class="label-sponser">
+					<a href="{{url_for('sponser')}}">Sponser's</a>
+				</div>
+				<div class="label-register">
+					<a href="{{url_for('home')}}#register-ref">Register</a>
+				</div>
+			</div>
+		</div>
+		<div class="heading">
+			<div class="main-heading fade1">
+				<strong>J N U</strong>
+			</div>
+			<div class="sub-heading fade1">
+				ENTREPRENEURSHIP CELL
+			</div>
+			<div class="quote fade1">
+				CREATING JOB CREATORS
+			</div>
+		</div>
+	</div>
+	<div class="intro" id="intro-ref">
+		<div class="intro-heading">
+			WHAT WE DO?
+		</div>
+		<div class="intro-content">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
+	<div class="events">
+		<div class="events-heading">
+			EVENTS
+		</div>
+		<div class="events-event">
+			<div class="event">
+				<a class="event-link">
+					<img src="{{url_for('static',filename='resources/img1.jpg')}}" width="100%" height="50%" class="event-img" alt="Event Image">
+					<div class="event-content">
+						<div class="event-content-heading">
+							StartUp
+						</div>
+						<div class="event-content-content">
+							JNU is a premier institution in the country that stands out for its commitment to creating a holistic learning environment for students  from various parts of the country and all over the world. 
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="event">
+				<a class="event-link">
+					<img src="{{url_for('static',filename='resources/img.jpg')}}" class="event-img" alt="Event Image">
+					<div class="event-content">
+						<div class="event-content-heading">
+							E-Submit
+						</div>
+						<div class="event-content-content">
+							The definitive annual Entrepreneurial Fest that brings together visionary students, path – leading professionals and trendsetters to exchange ingenious and enterprising ideas. 
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="event">
+				<a class="event-link">
+					<img src="{{url_for('static',filename='resources/img3.jpg')}}" class="event-img" alt="Event Image">
+					<div class="event-content">
+						<div class="event-content-heading">
+							Cloud Computing
+						</div>
+						<div class="event-content-content">
+							Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user.
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="sub-content border-right slide-right" >
+		<div class="sub-content-writeup"> 
+			<div class="sub-content-heading">
+			<strong>Entrepreneurship Cell JNU</strong>
+			</div>
+			<div class="sub-content-content">
+					<h3>Success achieving Goals</h3>
+
+					Led by a team of startup enthusiasts, we at E-cell help the budding engineers of the institution shape their ideas and innovations, aiding them in conceptualizing and executing their plans by fine-tuning their strategy and bring them the platform where they can interact with the industry and hence further hone their enterprising skills.
+
+					<h3>Social Responsibility</h3>
+
+					Along with other initiatives, E-cell DTU organizes various awareness campaigns like the India Towards a Cashless-Corruption Free Economy that aimed to enlighten the general public as well as the traders about the benefits of a cashless Economy post demonetization.
+
+			</div>
+		</div>
+		<div class="sub-content-image">
+			<img src="{{url_for('static',filename='resources/img-content.jpg')}}" class="sub-content-img">
+		</div>
+	</div>
+<div class="alumni">
+	<div class="alumni-heading fade">
+		<strong>STARTUPS</strong>
+	</div>
+	<div class="alumni-card" style="padding-right: 0px;">
+		<div class="alumni-content">
+			<div class="alumni-company fade">
+				<strong>IRADA</strong>
+			</div>
+			<div class="alumni-company-detail fade">
+				Dr. Akshansh Gupta has completed his Doctor of Philosophy (PhD) from Jawaharlal Nehru University (JNU), despite being 95 per cent disabled. He suffers from Cerebral Palsy and fought many odds for five years to complete his thesis on ‘Brain Computer Interface’ in the School of Computer and System Sciences, JNU. Despite having an M.Tech and PhD, he finds it hard to get employment, so he decided to do it on his own. He founded a company and now actively working along with two fellow PhD scholars from JNU, K R Anandam and Prabhat Ranjan. The company, called IRADA (Integrative Research Analysis and Development Academy), aims to promote education and research for the school students as well as PhD scholars.” It provides career counselling at each stage of education. The venture also guides young and novice researchers to how to pursue their research and write a research paper. 
+			</div>
+		</div>
+		<div class="alumni-detail">
+			<div class="alumni-image fade">
+				<img src="{{url_for('static',filename='resources/aksansh.jpg')}}" height="200px" width="200px" class="alumni-profile">
+			</div>
+			<div class="alumni-personal-detail">
+				<div class="alumni-name fade">
+					AKSHANSH GUPTA
+				</div>
+				<div class="alumni-post fade">
+					Post Doctoral Fellow, JNU.<br>
+					Founder, Irada India
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="alumni-card" style="padding-left: 0px;margin-top:50px;">
+		<div class="alumni-detail">
+			<div class="alumni-image fade">
+				<img src="{{url_for('static',filename='resources/gaurav.jpg')}}" height="200px" width="200px" class="alumni-profile">
+			</div>
+			<div class="alumni-personal-detail">
+				<div class="alumni-name fade">
+					GAURAV KUMAR
+				</div>
+				<div class="alumni-post fade">
+					PhD, Computer Science, JNU.<br>
+					Founder, CollCom
+				</div>
+			</div>
+		</div>
+		<div class="alumni-content">
+			<div class="alumni-company fade">
+				<strong>CollCom</strong>
+			</div>
+			<div class="alumni-company-detail fade">
+				Mr. Gaurav Kumar is a Senior Research Fellow, pursuing his Ph.D. in Computer Science from School of Computer & Systems Sciences, Jawaharlal Nehru University, New Delhi. He is a very passionate social activist and working towards creating a behavioural transformation through community service. He has founded an organization, named CollCom (College-Community), to provide a platform for all colleges and +2 schools' students to work closely with community/villages such as street children, migrated people, slums, orphanage, old age, safari-karamchari, divyang, drugs abused people, jail inmates, and farmers to understand their problems and need, and involve themselves in the problem solving process, so that life of these people or villagers can be raised at higher material and moral level.
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="gallery">
+		<div class="gallery-heading">
+			Gallery
+		</div>
+		<div class="gallery-image">
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop1.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop2.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop3.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop4.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop5.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container">
+				<img src="{{url_for('static',filename='resources/workshop6.jpg')}}" class="	gallery-img" style="">
+			</div>
+			<div class="gallery-img-container"  style="width: 34%;height: 460px;">
+				<img src="{{url_for('static',filename='resources/workshop7.jpg')}}" class="	gallery-img" >
+			</div>
+		</div>
+	</div>
+	<div class="query">
+		<div class="border border-left slide-left">
+		</div>
+		<div class="query-content">
+			<div class="query-heading">
+				<strong>Any Query?</strong>
+			</div>
+			<div class="query-line">
+				Post it below, And we will get back to you :)
+			</div>
+			<div class="query-form">
+				<form>
+					<div class="query-form-info">
+						<div>
+							<label>Name:</label>
+							<input type="name" name="query-name" placeholder="Name" id="query-name">
+						</div>
+						<div>
+							<label>Email:</label>
+							<input type="email" name="query-email" placeholder="Email" id="query-email">
+						</div>
+					</div>
+					<div class="query-form-text">
+						<div>
+							<label style="padding-left:3px">Query:</label>
+						</div>
+					<div style="flex-grow: 1">
+					<textarea name="query-text" id="query-text" placeholder="Write your Query" spellcheck="True"></textarea></div>
+					<br><br></div>
+					<button class="query-submit">Submit</button>
+				</form>
+			</div>
+		</div>
+		<div class="border border-right slide-right">
+		</div>
+	</div>
+	<div class = "footer">
+            <p style="margin: 10px;">Enter Your Email to get notified for our new Events</p>
+            
+            <form>
+                  <input type="Email" name="notifyemail" placeholder="Email" id="footer-email">
+                  <button id="footer-submit">Submit</button>
+            </form>
+            <ul class="footer_content">
+                  <a href="#" style="color: white; text-decoration: none;"><li>Home</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>About Us</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>Sponser's</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>Register</li></a>
+            </ul>
+           	<hr>
+            Legal Stuff<span id="footer-icon"><i class="fa fa-twitter-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-facebook-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-youtube-play" style="font-size:36px;color: red"></i>&nbsp;&nbsp;<i class="fa fa-instagram" style="font-size:36px;color: black"></i></span>
+      </div>
+	<div class="footer-end">
+		<div class="footer-end-heading">
+			The Entrepreneurship Cell
+		</div>
+		<div class="footer-end-copyright">
+			©2017-18 All Rights Reserved. Designed by E-Cell,JNU
+		</div>
+	</div>
+	<div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
+
+</html>

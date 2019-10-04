@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-cell - Sponser's</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style-sponser.css' )}}">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-logo">
+			<img src="{{url_for('static',filename ='resources/ecell.jpg' )}}" height="70px" width="250px">
+		</div>
+		<div class="navbar-labels">
+				<div class="label-home">
+					<a href="{{url_for('home')}}">Home</a>
+				</div>
+				<a href="{{url_for('home')}}#intro-ref">
+				<div class="label-about">
+					About Us
+				</div>
+				</a>
+				<div class="label-sponser">
+					<a href="{{url_for('sponser')}}">Sponser's</a>
+				</div>
+				<div class="label-register">
+					<a href="{{url_for('home')}}#register-ref">Register</a>
+				</div>
+			</div>
+	</div>
+	<div class="sponser">
+		<div class="sponser-heading">
+			Sponser
+		</div>
+		<div class="sponser-form">
+			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
+			<p>
+				In case, you are finding difficulty to fill the form 
+			</p>
+		</div>
+		<div>
+			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
+		</div>
+	</div>
+	
+	<div class = "footer">
+            <p style="margin: 10px;">Enter Your Email to get notified for our new Events</p>
+            
+            <form>
+                  <input type="Email" name="notifyemail" placeholder="Email" id="footer-email">
+                  <button id="footer-submit">Submit</button>
+            </form>
+            <ul class="footer_content">
+                  <a href="#" style="color: white; text-decoration: none;"><li>Home</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>About Us</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>Sponser's</li></a>
+                  <a href="#" style="color: white; text-decoration: none;"><li>Register</li></a>
+            </ul>
+           	<hr>
+            Legal Stuff<span id="footer-icon"><i class="fa fa-twitter-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-facebook-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-youtube-play" style="font-size:36px;color: red"></i>&nbsp;&nbsp;<i class="fa fa-amazon" style="font-size:36px;color: black"></i></span>
+      </div>
+	<div class="footer-end">
+		<div class="footer-end-heading">
+			The Entrepreneurship Cell
+		</div>
+		<div class="footer-end-copyright">
+			©2017-18 All Rights Reserved. Designed by E-Cell,JNU
+		</div>
+	</div>
+	<div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
+
+</html>

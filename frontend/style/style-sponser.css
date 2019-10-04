@@ -1,0 +1,158 @@
+body{
+	margin:0;
+	font-family: "PT Sans",'Helvetica Neue',Arial,Helvetica,sans-serif;
+	scroll-behavior:smooth;
+}
+li{
+	list-style: none;
+	cursor: pointer;
+}
+
+.navbar{
+	width: 100%;
+	padding-bottom:15px;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(51, 51, 51,0.6);
+}
+.navbar-logo{
+	width: 20%;
+	padding-left: 7%;
+	font-size: 40px;
+}
+
+.navbar-labels{
+	color:#e3e3e3;
+	width: 40%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 25px;
+	align-items: baseline;
+}
+.navbar-labels a{
+	color: #e3e3e3;
+	text-decoration: none;
+}
+.label-home {
+	cursor: pointer;
+}
+.label-about{
+	cursor: pointer;
+}
+.label-sponser{
+	cursor: pointer;
+}
+.label-register {
+	cursor: pointer;
+}
+.label-home:hover {
+	font-size:30px;
+}
+.label-about:hover{
+	font-size:30px;
+}
+.label-sponser:hover{
+	font-size:30px;
+}
+.label-register:hover{
+	font-size:30px;
+}
+
+
+
+.sponser{
+	margin:50px auto;
+	text-align: center;
+}
+.sponser-heading{
+	font-size:40px;
+	letter-spacing: 5px;
+}
+.sponser-form{
+	font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+
+	background-color: rgba(51, 51, 51,0.6);
+	color: white;
+	font-size: 20px;
+	padding:30px;
+	padding-top: 10px;
+	text-align: center;
+}
+#footer-email{
+	background-color:rgba(51, 51, 51,0.8);
+	color: white;
+	padding:5px;
+	width: 200px;
+	border: none;
+	font-size: 20px;
+	margin:10px; 
+	margin-bottom: 0;
+	cursor: text;
+}
+#footer-submit{
+	background-color: rgba(51, 51, 51,0.5);
+	color: white;
+	padding:5px;
+	margin:10px;
+	border:none;
+	font-size: 20px;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+.footer_content{
+	list-style-type: none;
+	width: 70%;
+	margin:20px auto;
+	cursor: pointer;
+	font-size: 25px;
+	display: flex;
+	justify-content: space-around;
+
+}
+.footer_content:hover{
+	background-color:rgba(51, 51, 51,0);
+}
+#footer-icon{
+	padding-left: 100px;
+}
+
+
+
+
+/*Footer End*/
+
+
+
+
+.footer-end{
+	height: 100px;
+	background-color: #1c1a1a;
+	color: white;
+	text-align: center;
+	line-height:40px;
+}
+.footer-end-heading{
+	font-size:40px;
+	padding-top: 10px;
+}
+.footer-end-copyright{
+	color:lightgrey;
+	font-size:15px;
+}
