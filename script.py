@@ -6,7 +6,7 @@ from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
 
-app = Flask(__name__ ,template_folder='../FrontEnd/Html',static_folder='../FrontEnd')
+app = Flask(__name__ ,template_folder='/FrontEnd/Html',static_folder='/FrontEnd')
 app.secret_key = "y337kGcys"
 
 @app.route('/')
