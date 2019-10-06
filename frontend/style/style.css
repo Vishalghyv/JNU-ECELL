@@ -56,6 +56,9 @@ li{
 .label-register {
 	cursor: pointer;
 }
+.label-contact {
+	cursor: pointer;
+}
 .label-home:hover {
 	font-size:25px;
 }
@@ -67,6 +70,9 @@ li{
 }
 .label-register:hover{
 	font-size:25px;
+}
+.label-contact:hover{
+	font-size: 25px;
 }
 .heading{
 	width:100%;
@@ -110,7 +116,7 @@ li{
 }
 .intro-content{
 	margin:0 auto;
-	width: 80%;
+	width: 70%;
 	color: #4a4946;
 	font-size: 25px;
 	line-height: 40px;
@@ -306,6 +312,7 @@ li{
 	width: 22%;
 	height: 230px;
 	overflow: hidden;
+	cursor: pointer;
 }
 .gallery-img-container img{
 	transition: transform .5s ease;
@@ -336,8 +343,14 @@ li{
 	margin: 50px auto;
 }
 .query-content{
-	margin:30px auto;
-	text-align: center;
+	/*margin:30px auto;
+	text-align: center;*/
+	display: flex;
+	justify-content: space-between;
+	margin-left: 8%
+}
+.query-main{
+	width: 50%;
 }
 .query-heading{
 	font-size: 30px;
@@ -353,8 +366,8 @@ li{
 	padding-bottom: 20px;
 }
 .query-form{
-	width: 50%;
-	margin:0 auto;
+	width: 100%;
+	/*margin:0 auto;*/
 }
 .query-form-info{
 	display: flex;
@@ -411,8 +424,23 @@ label{
 
 
 
+.contact{
+	width: 35%;
+}
+.contact-heading{
+	margin:10px;
+	margin-left: 0px;
+	font-size:30px;
+	color: #44474d;
+}
 
-
+.contact-info{
+	line-height: 30px;
+	font-size:20px;
+	color:#74767a;
+	margin:10px;
+	margin-left: 15px;
+}
 
 
 
@@ -479,7 +507,7 @@ label{
 
 .footer-end{
 	height: 100px;
-	background-color: #1c1a1a;
+	background-color:rgb(35, 30, 30);
 	color: white;
 	text-align: center;
 	line-height:40px;
