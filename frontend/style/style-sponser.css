@@ -107,7 +107,44 @@ li{
 	height: 350px;
 }
 
+/*Register column*/
+.register{
+	width: 100%;
+	margin-top: 40px;
+	text-align: center;
+}
+.register-heading{
+	color: #3e3f42;
+	letter-spacing: 15px;
+	font-size:50px;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.register-button{
+	cursor: pointer;
+	width: 200px;
+	border-radius:10px;
+	letter-spacing: 10px;
+	background-color: #e63922;
+	color: white;
+	margin:20px auto;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 25px;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:3px 3px 5px 6px #ccc;
 
+    margin-bottom:40px;
+}
+.register-button:hover{
+	-moz-box-shadow:    3px 3px 5px 6px #949488;
+  	-webkit-box-shadow: 3px 3px 5px 6px #949488;
+    box-shadow:3px 3px 5px 6px #949488;
+}
 
 
 .footer{

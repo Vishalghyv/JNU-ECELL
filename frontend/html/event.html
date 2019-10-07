@@ -4,7 +4,6 @@
 	<title>E-cell - Sponser's</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style-sponser.css' )}}">
-	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet"> 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -33,30 +32,19 @@
 				</div>
 			</div>
 	</div>
-	<div class="article">
-		<div class="article-heading">
-			<strong>{{articles["heading"]}}</strong>
+	<div class="sponser">
+		<div class="sponser-heading">
+				To Register for {{articles["heading"]}}
 		</div>
-		<div class="article-content">
-			<img src="{{url_for('static',filename=articles['img'])}}" 
-			class="article-image" alt="{{articles['heading']}}" align="right" >
-			{%for content in articles["article"]%}
-			{{content}}
-			<br><br>
-			{%endfor%}
+		<div class="sponser-form">
+			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
+			<p>
+				In case, you are finding difficulty to fill the form 
+			</p>
 		</div>
-		{% if articles["register"]%}
-		<div class="register" id="register-ref">
-			<div class="register-heading">
-				Register for This Event
-			</div>
-			<div class="register-button">
-				<a href="{{url_for('event',num=num)}}" style="color:white;text-decoration: none;">
-					<strong>Register</strong>
-				</a>
-			</div>
+		<div>
+			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
 		</div>
-		{%endif%}
 	</div>
 	
 	<div class = "footer">
@@ -84,7 +72,7 @@
 			©2017-18 All Rights Reserved. Designed by E-Cell,JNU
 		</div>
 	</div>
-</body>
+	</body>
 <script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
 
 </html>
