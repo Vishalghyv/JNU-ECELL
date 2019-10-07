@@ -52,7 +52,8 @@ def event(num):
 	if num.isnumeric():
 		if(int(num)<=3):
 			articles=posts["post"+num]
-			return render_template("event.html",articles=articles,num=num)
+			if(articles["register"]):
+					return render_template("event.html",articles=articles,num=num)
 	return render_template("ecell.html")
 if __name__ == "__main__":
 	app.run(debug=True)
