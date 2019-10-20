@@ -11,7 +11,8 @@ posts ={
 		],
 		"heading":"Start Up",
 		"img":"resources/img1.jpg",
-		"register":0
+		"register":0,
+		"num":1
 		},
 	"post2":{"article":[
 		"Almost everyone, if given a chance would prefer the position a job giver instead of job seeker. Entrepreneurship gives u a chance to be a job giver. It’s a way to give it back to the society through the services you create. The precise definition of entrepreneurship is the process of creating new business or market. An entrepreneur usually starts a business form complete scratch , but one can also buy an old company n rebuild it. According to the job-listing site, Monster, there are nine characteristics of entrepreneurs and the entrepreneurial journey. They include motivation, creativity, hands-on, versatility, business skills, drive, vision, flexibility, and decisiveness.",
@@ -21,7 +22,8 @@ posts ={
 		],
 	"heading":"E-Submit",
 	"img":"resources/img2.jpg",
-	"register":1
+	"register":1,
+	"num":2
 	},
 	"post3":{"article":[
 		"Almost everyone, if given a chance would prefer the position a job giver instead of job seeker. Entrepreneurship gives u a chance to be a job giver. It’s a way to give it back to the society through the services you create. The precise definition of entrepreneurship is the process of creating new business or market. An entrepreneur usually starts a business form complete scratch , but one can also buy an old company n rebuild it. According to the job-listing site, Monster, there are nine characteristics of entrepreneurs and the entrepreneurial journey. They include motivation, creativity, hands-on, versatility, business skills, drive, vision, flexibility, and decisiveness.",
@@ -31,11 +33,19 @@ posts ={
 		],
 	"heading":"Cloud Computing",
 	"img":"resources/img3.jpg",
-	"register":0},
+	"register":0,
+	"num":3},
+}
+headings={
+	"heading1":"Startup",
+	"heading2":"E-Submit",
+	"heading3":"Cloud Computing",
+	"heading4":"Crypto Currency(NA)",
+	"heading5":"Social Sciences(NA)",
+	"heading6":"Enviroment(NA)",
 }
 @app.route('/')
 def home():
-	print("Hello")
 	return render_template("ecell.html")
 @app.route('/sponser')
 def sponser():
@@ -45,7 +55,7 @@ def article(num):
 	if num.isnumeric():
 		if(int(num)<=3):
 			articles=posts["post"+num]
-			return render_template("article.html",articles=articles,num=num)
+			return render_template("article.html",articles=articles,headings=headings,num=num)
 	return render_template("ecell.html")
 @app.route('/registerEvent/<num>')
 def event(num):
@@ -55,5 +65,12 @@ def event(num):
 			if(articles["register"]):
 					return render_template("event.html",articles=articles,num=num)
 	return render_template("ecell.html")
+@app.route('/listingArticle')
+def listingArticle():
+	return render_template("listing.html",posts=posts,variable=1)
+@app.route('/listingEvent')
+def listingEvent():
+	return render_template("listing.html",posts=posts,variable=0)
+
 if __name__ == "__main__":
 	app.run(debug=True)

@@ -8,6 +8,25 @@ li{
 	list-style: none;
 	cursor: pointer;
 }
+.article-link{
+	position: fixed;
+	bottom: 0;
+	z-index: 100;
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	background-color: #424240;
+	opacity: 0.8;
+	color: white;
+	font-size:40px;
+}
+.article-links{
+	margin:15px auto;
+}
+.article-links:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
 .navbar-labels a{
 	color: #b3bcc9;
 	text-decoration: none;
@@ -135,6 +154,18 @@ li{
 	font-size:70px;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+.moreEvent{
+	color: #262625;
+	font-size: 40px;
+	text-align: center;
+	margin-top: -20px;
+	padding-bottom: 15px;
+}
+.moreEvent:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 .events-event{
 	display: flex;

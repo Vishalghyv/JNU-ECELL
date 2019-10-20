@@ -32,21 +32,50 @@
 				</div>
 			</div>
 	</div>
-	<div class="sponser">
-		<div class="sponser-heading">
-			Sponser
+<div class="listing-heading">
+	{% if variable%}
+	Article
+	{% else %}
+	Events
+	{% endif %}
+	
+</div>
+{% for post in posts %}
+{% if variable != posts[post]["register"]%}
+<div class="alumni-card" style="padding-left: 0px;margin-top:50px;">
+	
+	<div class="alumni-detail">
+		<div class="alumni-image fade">
+			<img src="{{url_for('static',filename=posts[post]['img'])}}" height="200px" width="200px" class="alumni-profile">
 		</div>
-		<div class="sponser-form">
-			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
-			<p>
-				In case, you are finding difficulty to fill the form 
-			</p>
+		<!-- <div class="alumni-personal-detail">
+			<div class="alumni-name fade">
+				GAURAV KUMAR
+			</div>
+			<div class="alumni-post fade">
+				PhD, Computer Science, JNU.<br>
+				Founder, CollCom
+			</div>
+		</div> -->
+	</div>
+	<div class="alumni-content">
+		<div class="alumni-company fade">
+			<strong>{{posts[post]["heading"]}}</strong>
 		</div>
-		<div>
-			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
+		<div class="alumni-company-detail fade">
+			
+			{{posts[post]["article"][0]}}
+
+			<br>
+			<a style="cursor: pointer;color:#63635d;text-decoration: underline;" href="{{url_for('article',num=posts[post]['num'])}}">Read more</a>
 		</div>
 	</div>
-	
+
+</div>
+{% endif %}
+{% endfor %}
+<div style="height: 50px">
+	</div>
 	<div class = "footer">
             <p style="margin: 10px;">Enter Your Email to get notified for our new Events</p>
             

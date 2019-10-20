@@ -38,12 +38,29 @@
 			<strong>{{articles["heading"]}}</strong>
 		</div>
 		<div class="article-content">
-			<img src="{{url_for('static',filename=articles['img'])}}" 
-			class="article-image" alt="{{articles['heading']}}" align="right" >
-			{%for content in articles["article"]%}
-			{{content}}
-			<br><br>
-			{%endfor%}
+			<div class="article-sub-content">
+				<img src="{{url_for('static',filename=articles['img'])}}" 
+				class="article-image" alt="{{articles['heading']}}" align="right" >
+				{%for content in articles["article"]%}
+					{{content}}
+				<br><br>
+				{%endfor%}
+			</div>
+			<div class="lists">
+				<div class="lists-head">
+					<strong>More Aritcles</strong>
+				</div>
+				{% for heading in headings %}	
+				<a href="{{url_for('article',num=heading[-1])}}" style="color: #626663;text-decoration: none;cursor: pointer;">
+					<div class="lists-heading">
+					
+					{{headings[heading]}}
+				</div>	</a>
+				{% endfor %}
+				<div class="lists-end">
+					<a style="text-decoration:none;color:#575957" href="{{url_for('listingArticle')}}">Click Here for all articles</a>
+				</div>
+			</div>
 		</div>
 		{% if articles["register"]%}
 		<div class="register" id="register-ref">
@@ -57,6 +74,7 @@
 			</div>
 		</div>
 		{%endif%}
+		
 	</div>
 	
 	<div class = "footer">
@@ -70,7 +88,7 @@
                   <a href="{{url_for('home')}}" style="color: white; text-decoration: none;"><li>Home</li></a>
                   <a href="{{url_for('home')}}#intro-ref" style="color: white; text-decoration: none;"><li>About Us</li></a>
                   <a href="{{url_for('sponser')}}" style="color: white; text-decoration: none;"><li>Sponser's</li></a>
-                  <a href="{{url_for('home')}}#register-ref" style="color: white; text-decoration: none;"><li>Register</li></a>
+                  <a href="{{url_for('listingEvent')}}" style="color: white;text-decoration: none;cursor: pointer;"><li>Register</li></a>
                   <a href="{{url_for('home')}}#contact" style="color: white; text-decoration: none;"><li>Contact Us</li></a>
             </ul>
            	<hr>

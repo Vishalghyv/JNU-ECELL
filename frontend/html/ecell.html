@@ -13,6 +13,7 @@
 	</style>
 </head>
 <body>
+
 	<div class="header">
 		<div class="navbar">
 			<div class="navbar-logo">
@@ -31,7 +32,7 @@
 					<a href="{{url_for('sponser')}}">Sponser's</a>
 				</div>
 				<div class="label-register">
-					<a href="{{url_for('home')}}#register-ref">Register</a>
+					<a href="{{url_for('listingEvent')}}" >Register</a>
 				</div>
 				<div class="label-contact">
 					<a href="{{url_for('home')}}#contact">Contact Us</a>
@@ -65,7 +66,9 @@
 	</div>
 	<div class="events">
 		<div class="events-heading">
+			<a href="{{url_for('listingEvent')}}" style="color: #262625;text-decoration: none;cursor: pointer;">
 			EVENTS
+			</a>
 		</div>
 		<div class="events-event">
 			<div class="event">
@@ -86,7 +89,9 @@
 					<img src="{{url_for('static',filename='resources/img2.jpg')}}" class="event-img" alt="Event Image">
 					<div class="event-content">
 						<div class="event-content-heading">
+							
 							E-Submit
+							
 						</div>
 						<div class="event-content-content">
 							The definitive annual Entrepreneurial Fest that brings together visionary students, path – leading professionals and trendsetters to exchange ingenious and enterprising ideas. 
@@ -107,6 +112,9 @@
 					</div>
 				</a>
 			</div>
+		</div>
+		<div class="moreEvent">
+			<a href="{{url_for('listingEvent')}}" style="color: #262625;text-decoration: none;">All Events</a>
 		</div>
 	</div>
 	<div class="sub-content border-right slide-right" >
@@ -275,7 +283,7 @@
                   <a href="{{url_for('home')}}" style="color: white; text-decoration: none;"><li>Home</li></a>
                   <a href="{{url_for('home')}}#intro-ref" style="color: white; text-decoration: none;"><li>About Us</li></a>
                   <a href="{{url_for('sponser')}}" style="color: white; text-decoration: none;"><li>Sponser's</li></a>
-                  <a href="{{url_for('home')}}#register-ref" style="color: white; text-decoration: none;"><li>Register</li></a>
+                  <a href="{{url_for('listingEvent')}}" style="color: white;text-decoration: none;cursor: pointer;"><li>Register</li></a>
                   <a href="{{url_for('home')}}#contact" style="color: white; text-decoration: none;"><li>Contact Us</li></a>
             </ul>
            	<hr>
@@ -289,8 +297,10 @@
 			©2017-18 All Rights Reserved. Designed by E-Cell,JNU
 		</div>
 	</div>
-	<div>
-		
+	<div style="height: 80px">
+	</div>
+	<div class="article-link">
+		<div class="article-links"><a style="color: white;" href="{{url_for('listingArticle')}}">Click Here to go on Articles Page</a></div>
 	</div>
 </body>
 <script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
