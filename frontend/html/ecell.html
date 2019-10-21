@@ -2,10 +2,9 @@
 <html>
 <head>
 	<title>E-cell</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/google_style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style.css')}}">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="{{url_for('static',filename ='javascript/jquery.js')}}"></script>
 	<style type="text/css">
 		.header{
 			background-image: url("{{url_for('static',filename='resources/img-header2.jpg')}}");
@@ -40,13 +39,13 @@
 			</div>
 		</div>
 		<div class="heading">
-			<div class="main-heading fade1">
+			<div class="main-heading">
 				<strong>J N U</strong>
 			</div>
-			<div class="sub-heading fade1">
+			<div class="sub-heading">
 				ENTREPRENEURSHIP CELL
 			</div>
-			<div class="quote fade1">
+			<div class="quote">
 				CREATING JOB CREATORS
 			</div>
 		</div>
