@@ -131,14 +131,14 @@ def sponser():
 @app.route('/article/<num>')
 def article(num):
     if num.isnumeric():
-        if(int(num)<=3):
+        if(int(num)<=len(posts)):
             articles=posts["post"+num]
             return render_template("article.html",articles=articles,headings=headings,num=num)
     return render_template("ecell.html")
 @app.route('/registerEvent/<num>')
 def event(num):
     if num.isnumeric():
-        if(int(num)<=3):
+        if(int(num)<=len(posts)):
             articles=posts["post"+num]
             if(articles["register"]):
                     return render_template("event.html",articles=articles,num=num)
@@ -209,6 +209,10 @@ def adminLogout():
 @app.route("/adminEdit/<num>/<name>")
 @login_required
 def adminEdit(num,name):
+    with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
+        data = json.load(f)
+    posts=data["posts"]
+    headings=data["headings"]
     post=posts[name]
     return render_template("articleEdit.html",post=post,name=name)
 @app.route("/adminUpdate/<name>", methods=['GET', 'POST'])

@@ -116,68 +116,68 @@ def add_profile_pic(pic_upload,postname):
 import json
 
 #########################
-#	Reading from json	#
+#   Reading from json   #
 #########################
 with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
-	data = json.load(f)
+    data = json.load(f)
 posts=data["posts"]
 headings=data["headings"]
 @app.route('/')
 def home():
-	return render_template("ecell.html")
+    return render_template("ecell.html")
 @app.route('/sponser')
 def sponser():
-	return render_template("sponser.html")
+    return render_template("sponser.html")
 @app.route('/article/<num>')
 def article(num):
-	if num.isnumeric():
-		if(int(num)<=3):
-			articles=posts["post"+num]
-			return render_template("article.html",articles=articles,headings=headings,num=num)
-	return render_template("ecell.html")
+    if num.isnumeric():
+        if(int(num)<=len(posts)):
+            articles=posts["post"+num]
+            return render_template("article.html",articles=articles,headings=headings,num=num)
+    return render_template("ecell.html")
 @app.route('/registerEvent/<num>')
 def event(num):
-	if num.isnumeric():
-		if(int(num)<=3):
-			articles=posts["post"+num]
-			if(articles["register"]):
-					return render_template("event.html",articles=articles,num=num)
-	return render_template("ecell.html")
+    if num.isnumeric():
+        if(int(num)<=len(posts)):
+            articles=posts["post"+num]
+            if(articles["register"]):
+                    return render_template("event.html",articles=articles,num=num)
+    return render_template("ecell.html")
 @app.route('/listingArticle')
 def listingArticle():
-	return render_template("listing.html",posts=posts,variable=1)
+    return render_template("listing.html",posts=posts,variable=1)
 @app.route('/listingEvent')
 def listingEvent():
-	return render_template("listing.html",posts=posts,variable=0)
+    return render_template("listing.html",posts=posts,variable=0)
 @app.route('/admin')
 def admin():
-	return render_template("admin.html")
+    return render_template("admin.html")
 @app.route('/adminLogin', methods=['GET', 'POST'])
 def adminLogin():
-	form = LoginForm()
-	if form.validate_on_submit():
-	    # Grab the user from our User Models table
-	    user = User.query.filter_by(email=form.email.data).first()
+    form = LoginForm()
+    if form.validate_on_submit():
+        # Grab the user from our User Models table
+        user = User.query.filter_by(email=form.email.data).first()
 
-	    # Check that the user was supplied and the password is right
-	    # The verify_password method comes from the User object
-	    # https://stackoverflow.com/questions/2209755/python-operation-vs-is-not
+        # Check that the user was supplied and the password is right
+        # The verify_password method comes from the User object
+        # https://stackoverflow.com/questions/2209755/python-operation-vs-is-not
 
-	    if user.check_password(form.password.data) and user is not None:
-	        #Log in the user
+        if user.check_password(form.password.data) and user is not None:
+            #Log in the user
 
-	        login_user(user)
+            login_user(user)
 
-	        # If a user was trying to visit a page that requires a login
-	        # flask saves that URL as 'next'.
-	        next = request.args.get('next')
+            # If a user was trying to visit a page that requires a login
+            # flask saves that URL as 'next'.
+            next = request.args.get('next')
 
-	        # So let's now check if that next exists, otherwise we'll go to
-	        # the welcome page.
-	        if next == None or not next[0]=='/':
-	            next = url_for('adminPosts')
-	        return redirect(next)
-	return render_template('login.html', form=form)
+            # So let's now check if that next exists, otherwise we'll go to
+            # the welcome page.
+            if next == None or not next[0]=='/':
+                next = url_for('adminPosts')
+            return redirect(next)
+    return render_template('login.html', form=form)
 @app.route('/adminPosts')
 @login_required
 def adminPosts():
@@ -209,8 +209,12 @@ def adminLogout():
 @app.route("/adminEdit/<num>/<name>")
 @login_required
 def adminEdit(num,name):
-	post=posts[name]
-	return render_template("articleEdit.html",post=post,name=name)
+    with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
+        data = json.load(f)
+    posts=data["posts"]
+    headings=data["headings"]
+    post=posts[name]
+    return render_template("articleEdit.html",post=post,name=name)
 @app.route("/adminUpdate/<name>", methods=['GET', 'POST'])
 @login_required
 def adminUpdate(name):
@@ -277,4 +281,4 @@ def adminDelete(name):
 def catch_all(path):
     return render_template("ecell.html")
 if __name__ == "__main__":
-	app.run(debug=False)
+    app.run(debug=False)
