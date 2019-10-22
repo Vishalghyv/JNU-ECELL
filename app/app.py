@@ -116,8 +116,7 @@ import json
 #########################
 #	Reading from json	#
 #########################
-
-with open(os.path.abspath(os.path.join(app._static_folder, 'articles/articles.json'))) as f:
+with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
 	data = json.load(f)
 posts=data["posts"]
 headings=data["headings"]
@@ -180,7 +179,7 @@ def adminLogin():
 @app.route('/adminPosts')
 @login_required
 def adminPosts():
-    with open(os.path.abspath(os.path.join(app._static_folder, 'articles/articles.json'))) as f:
+    with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
         data = json.load(f)
     posts=data["posts"]
     headings=data["headings"]
@@ -231,7 +230,7 @@ def adminUpdate(name):
         if form.picture.data:
             pic = add_profile_pic(form.picture.data,"post"+str(len(posts)))
             posts["post"+str(len(posts))]["img"]="resources/"+pic
-        with open(os.path.abspath(os.path.join(app._static_folder, 'articles/articles.json')), 'w') as f:
+        with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
             json.dump(data, f)
         return redirect(url_for('adminPosts'))
     elif request.method == 'GET':
@@ -258,7 +257,7 @@ def adminCreate():
         if form.picture.data:
             pic = add_profile_pic(form.picture.data,"post"+str(len(posts)))
             posts["post"+str(len(posts))]["img"]="resources/"+pic
-        with open(os.path.abspath(os.path.join(app._static_folder, 'articles/articles.json')), 'w') as f:
+        with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
             json.dump(data, f)
         return redirect(url_for('adminPosts'))
     return render_template('create_post.html',form=form)
@@ -269,7 +268,7 @@ def adminDelete(name):
     if blog_post["user_name"] != current_user.username:
         abort(403)
     del posts[name]
-    with open(os.path.abspath(os.path.join(app._static_folder, 'articles/articles.json')), 'w') as f:
+    with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
             json.dump(data, f)
     return redirect(url_for('adminPosts'))
 @app.route('/<path:path>')
