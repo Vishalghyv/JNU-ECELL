@@ -101,7 +101,7 @@ def add_profile_pic(pic_upload,postname):
     ext_type = filename.split('.')[-1]
     storage_filename = str(postname) + '.' +ext_type
     
-    filepath = os.path.abspath(os.path.join(basedir, 'resources/', storage_filename))
+    filepath = os.path.abspath(os.path.join(basedir, 'frontend/resources/', storage_filename))
 
     # Play Around with this size.
     output_size = (1000, 1000)
@@ -259,7 +259,7 @@ def adminCreate():
         if form.picture.data:
             pic = add_profile_pic(form.picture.data,"post"+str(len(posts)))
             posts["post"+str(len(posts))]["img"]="resources/"+pic
-        with open(os.path.abspath(os.path.join(basedir, 'article.json'))) as f:
+        with open(os.path.abspath(os.path.join(basedir, 'article.json')),'w') as f:
             json.dump(data, f)
         return redirect(url_for('adminPosts'))
     return render_template('create_post.html',form=form)
