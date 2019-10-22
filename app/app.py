@@ -22,7 +22,7 @@ from wtforms import StringField, SubmitField, TextAreaField,BooleanField
 
 
 
-app = Flask(__name__ ,template_folder='../frontend/html',static_folder='../frontend')
+app = Flask(__name__ ,template_folder='./frontend/html',static_folder='./frontend')
 app.config['SECRET_KEY'] = 'mysecret'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
@@ -92,6 +92,8 @@ class BlogPostForm(FlaskForm):
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
     event = BooleanField('Event')
     submit = SubmitField('BlogPost')
+print(os.path.abspath(os.path.join(app._static_folder, 'resources/')))
+
 def add_profile_pic(pic_upload,postname):
 
     filename = pic_upload.filename
@@ -99,7 +101,7 @@ def add_profile_pic(pic_upload,postname):
     ext_type = filename.split('.')[-1]
     storage_filename = str(postname) + '.' +ext_type
     
-    filepath = os.path.abspath(os.path.join(app._static_folder, 'resources/', storage_filename))
+    filepath = os.path.abspath(os.path.join(basedir, 'resources/', storage_filename))
 
     # Play Around with this size.
     output_size = (1000, 1000)
