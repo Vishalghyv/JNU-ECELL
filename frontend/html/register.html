@@ -31,19 +31,17 @@
 				</div>
 			</div>
 	</div>
-	<div class="sponser">
-		<div class="sponser-heading">
-				To Register for {{articles["heading"]}}
-		</div>
-		<div class="sponser-form">
-			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
-			<p>
-				In case, you are finding difficulty to fill the form 
-			</p>
-		</div>
-		<div>
-			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
-		</div>
+	<div>
+		<form method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.email.label }} {{ form.email() }}<br>
+    {{ form.username.label }} {{ form.username() }}<br>
+    {{ form.password.label }} {{ form.password() }}<br>
+    {{ form.pass_confirm.label }} {{ form.pass_confirm() }}<br>
+ 	{{ form.submit() }}
+		</form>
+
 	</div>
 	
 	<div class = "footer">

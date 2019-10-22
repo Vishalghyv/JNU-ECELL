@@ -2,9 +2,12 @@
 <html>
 <head>
 	<title>E-cell - Sponser's</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style-sponser.css' )}}">
+	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet"> 
 	<script src="{{url_for('static',filename ='javascript/jquery.js')}}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="navbar">
@@ -31,21 +34,52 @@
 				</div>
 			</div>
 	</div>
-	<div class="sponser">
-		<div class="sponser-heading">
-				To Register for {{articles["heading"]}}
+	<div class="article">
+		<div class="article-heading">
+			<strong>{{post["heading"]}}</strong>
 		</div>
-		<div class="sponser-form">
-			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
-			<p>
-				In case, you are finding difficulty to fill the form 
-			</p>
-		</div>
-		<div>
-			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
+		<div class="article-content">
+			<div class="article-sub-content" style="width: 100%;">
+				<img src="{{url_for('static',filename=post['img'])}}" 
+				class="article-image" alt="{{post['heading']}}" align="right" >
+				{{post["article"]}}
+				<br><br>
+			</div>
 		</div>
 	</div>
-	
+	<div>
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_modal">Delete</button>
+     </div>
+	<a href="{{url_for('adminUpdate',name=name)}}">Update</a>
+	</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="del_modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Post?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this article?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+          <form action="{{ url_for('adminDelete', name=name) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 	<div class = "footer">
             <p style="margin: 10px;">Enter Your Email to get notified for our new Events</p>
             
@@ -71,7 +105,7 @@
 			©2017-18 All Rights Reserved. Designed by E-Cell,JNU
 		</div>
 	</div>
-	</body>
+</body>
 <script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
 
 </html>

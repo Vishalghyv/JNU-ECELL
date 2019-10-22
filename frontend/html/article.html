@@ -40,10 +40,8 @@
 			<div class="article-sub-content">
 				<img src="{{url_for('static',filename=articles['img'])}}" 
 				class="article-image" alt="{{articles['heading']}}" align="right" >
-				{%for content in articles["article"]%}
-					{{content}}
+				{{articles["article"]}}
 				<br><br>
-				{%endfor%}
 			</div>
 			<div class="lists">
 				<div class="lists-head">

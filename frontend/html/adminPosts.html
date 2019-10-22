@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-cell - Sponser's</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='style/style-sponser.css' )}}">
+  <script src="{{url_for('static',filename ='javascript/jquery.js')}}"></script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="{{url_for('static',filename ='resources/ecell.jpg' )}}" height="70px" width="250px">
+    </div>
+    <div class="navbar-labels">
+        <div class="label-home">
+          <a href="{{url_for('home')}}">Home</a>
+        </div>
+        <a href="{{url_for('home')}}#intro-ref">
+        <div class="label-about">
+          About Us
+        </div>
+        </a>
+        <div class="label-sponser">
+          <a href="{{url_for('sponser')}}">Sponser's</a>
+        </div>
+        <div class="label-register">
+          <a href="{{url_for('home')}}#register-ref">Register</a>
+        </div>
+        <div class="label-contact">
+          <a href="{{url_for('home')}}#contact">Contact Us</a>
+        </div>
+      </div>
+  </div>
+    <div>
+  {% if current_user.is_authenticated %}
+    <li class="nav-link"><a href="{{ url_for('adminLogout') }}">Log Out</a></li>
+    <li class="nav-link"><a href="{{url_for('adminCreate')}}">Create Post</a></li>
+    {% else %}
+    <li class="nav-link"><a href="{{ url_for('adminLogin') }}">Log In</a></li>
+    <li class="nav-link"><a href="{{ url_for('adminRegister') }}">Register</a></li>
+    {% endif %}
+
+  </div>
+  
+
+<div class="listing-heading">
+  Article And Events for {{current_user.username}}
+  
+</div>
+{% for post in posts %}
+{% if posts[post]["user_name"] == current_user.username%}
+<div class="alumni-card" style="padding-left: 0px;margin-top:50px;">
+  
+  <div class="alumni-detail">
+    <div class="alumni-image fade">
+      <img src="{{url_for('static',filename=posts[post]['img'])}}" height="200px" width="200px" class="alumni-profile">
+    </div>
+  </div>
+  <div class="alumni-content">
+    <div class="alumni-company fade">
+      <strong>{{posts[post]["heading"]}}</strong>
+    </div>
+    <div class="alumni-company-detail fade">
+      {{posts[post]["article"][0:500]}}
+      <br>
+      <a style="cursor: pointer;color:#63635d;text-decoration: underline;" href="{{url_for('adminEdit',num=posts[post]['num'],name=post)}}">View Complete And Edit</a>
+    </div>
+  </div>
+
+</div>
+{% endif %}
+{% endfor %}
+<div style="height: 50px">
+  </div>
+  <div class = "footer">
+            <p style="margin: 10px;">Enter Your Email to get notified for our new Events</p>
+            
+            <form>
+                  <input type="Email" name="notifyemail" placeholder="Email" id="footer-email">
+                  <button id="footer-submit">Submit</button>
+            </form>
+            <ul class="footer_content">
+                  <a href="{{url_for('home')}}" style="color: white; text-decoration: none;"><li>Home</li></a>
+                  <a href="{{url_for('home')}}#intro-ref" style="color: white; text-decoration: none;"><li>About Us</li></a>
+                  <a href="{{url_for('sponser')}}" style="color: white; text-decoration: none;"><li>Sponser's</li></a>
+                  <a href="{{url_for('listingEvent')}}" style="color: white;text-decoration: none;cursor: pointer;"><li>Register</li></a>
+                  <a href="{{url_for('home')}}#contact" style="color: white; text-decoration: none;"><li>Contact Us</li></a>
+            </ul>
+            <hr>
+            Legal Stuff<span id="footer-icon"><i class="fa fa-twitter-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-facebook-square" style="font-size:36px"></i>&nbsp;&nbsp;<i class="fa fa-youtube-play" style="font-size:36px;color: red"></i>&nbsp;&nbsp;<i class="fa fa-amazon" style="font-size:36px;color: black"></i></span>
+      </div>
+  <div class="footer-end">
+    <div class="footer-end-heading">
+      The Entrepreneurship Cell
+    </div>
+    <div class="footer-end-copyright">
+      ©2017-18 All Rights Reserved. Designed by E-Cell,JNU
+    </div>
+  </div>
+  </body>
+<script type="text/javascript" src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
+
+</html>

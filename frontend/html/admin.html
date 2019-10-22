@@ -31,19 +31,15 @@
 				</div>
 			</div>
 	</div>
-	<div class="sponser">
-		<div class="sponser-heading">
-				To Register for {{articles["heading"]}}
-		</div>
-		<div class="sponser-form">
-			<iframe src="https://goo.gl/forms/qyLmHR9q4U2jnbz32" width="900" height="1000"></iframe>
-			<p>
-				In case, you are finding difficulty to fill the form 
-			</p>
-		</div>
-		<div>
-			<a href="https://goo.gl/forms/qyLmHR9q4U2jnbz32" data-toggle="tooltip">Click Here</a>
-		</div>
+	<div>
+	{% if current_user.is_authenticated %}
+    <li class="nav-link"><a href="{{ url_for('adminLogout') }}">Log Out</a></li>
+    <li class="nav-link"><a href="#">Create Post</a></li>
+    {% else %}
+    <li class="nav-link"><a href="{{ url_for('adminLogin') }}">Log In</a></li>
+    <li class="nav-link"><a href="{{ url_for('adminRegister') }}">Register</a></li>
+    {% endif %}
+
 	</div>
 	
 	<div class = "footer">
